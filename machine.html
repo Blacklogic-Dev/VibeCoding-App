@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeCoding | Machine Learning</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ff69b4, #ff8c00);
+      color: #fff;
+    }
+    header {
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h1 {
+      text-align: center;
+      color: #66ccff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .module {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid #66ccff;
+    }
+    .module h3 {
+      color: #ffcc00;
+    }
+    pre {
+      background: rgba(0,0,0,0.5);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      color: #00ffcc;
+    }
+    .quiz-section {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .quiz-option {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.8rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .quiz-option.correct { background-color: #28a745 !important; }
+    .quiz-option.wrong { background-color: #dc3545 !important; }
+    #scoreDisplay {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .badge-container {
+      text-align: center;
+      font-size: 1.3rem;
+      color: gold;
+      display: none;
+    }
+    .try-again {
+      text-align: center;
+      font-size: 1.2rem;
+      color: orange;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2><i class="fas fa-robot"></i> Machine Learning</h2>
+  </header>  <h1>🤖 VibeCoding: Machine Learning Modules</h1>
+  <section class="grid">
+    <div class="module">
+      <h3>Module 1: Introduction to Machine Learning</h3>
+      <p>Machine learning teaches machines to learn patterns from data.</p>
+      <pre>from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifieriris = load_iris() model = DecisionTreeClassifier() model.fit(iris.data, iris.target)</pre> </div> <div class="module"> <h3>Module 2: Supervised Learning</h3> <p>In supervised learning, models learn from labeled data.</p> <pre>from sklearn.linear_model import LinearRegression X = [[0], [1], [2]] y = [0, 1, 2] model = LinearRegression().fit(X, y)</pre> </div> <div class="module"> <h3>Module 3: Unsupervised Learning</h3> <p>Clustering and grouping unlabeled data.</p> <pre>from sklearn.cluster import KMeans X = [[1, 2], [1, 4], [1, 0], [10, 2], [10, 4]] model = KMeans(n_clusters=2).fit(X)</pre> </div> <div class="module"> <h3>Module 4: Model Evaluation</h3> <p>Evaluate model accuracy and performance.</p> <pre>from sklearn.metrics import accuracy_score y_true = [0, 1, 1, 0] y_pred = [0, 1, 0, 0] print(accuracy_score(y_true, y_pred))</pre> </div> <div class="module"> <h3>Module 5: ML in Real-world Apps</h3> <p>Machine learning powers chatbots, recommendation engines, and fraud detection.</p> <pre># ML is often integrated using APIs and real-time data pipelines.</pre> </div>
+
+  </section>  <div class="quiz-section">
+    <h1>🧠 Machine Learning Quiz</h1>
+    <div class="quiz-question">
+      <p>1. What is machine learning?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">Teaching machines to learn from data</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">A type of human brain simulation</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">A web design technique</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">A mobile app feature</div>
+    </div>
+    <div class="quiz-question">
+      <p>2. What is supervised learning?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">Learning with labeled data</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">Learning without feedback</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">Sorting files by name</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">Making web pages interactive</div>
+    </div>
+    <div class="quiz-question">
+      <p>3. Which method is used for clustering?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">KMeans</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">LinearRegression</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">DecisionTree</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">Pandas</div>
+    </div>
+    <div class="quiz-question">
+      <p>4. How do we check model accuracy?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">Using accuracy_score</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">Using HTML tags</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">Using JavaScript</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">With a text editor</div>
+    </div>
+    <div class="quiz-question">
+      <p>5. Where is ML used?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">Chatbots and recommendation systems</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">Only in games</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">To design logos</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">To send emails</div>
+    </div><h2 id="scoreDisplay"></h2>
+<div class="badge-container" id="badgeContainer"></div>
+<div class="try-again" id="tryAgain">😓 Study more and retake the quiz!</div>
+
+  </div>  <script>
+    let correctAnswers = 0;
+    let totalAnswered = 0;
+
+    function checkAnswer(element, isCorrect) {
+      if (element.classList.contains('correct') || element.classList.contains('wrong')) return;
+
+      if (isCorrect) {
+        element.classList.add('correct');
+        correctAnswers++;
+      } else {
+        element.classList.add('wrong');
+      }
+
+      totalAnswered++;
+
+      if (totalAnswered === 5) {
+        const percent = (correctAnswers / 5) * 100;
+        document.getElementById("scoreDisplay").innerText = `You scored ${correctAnswers}/5 (${percent.toFixed(1)}%)`;
+
+        const badge = document.getElementById("badgeContainer");
+        badge.style.display = "block";
+
+        if (percent >= 80) {
+          badge.innerHTML = "🎖 Badge Earned: <strong>ML Pro</strong>";
+        } else if (percent >= 60) {
+          badge.innerHTML = "🥇 Badge Earned: <strong>ML Specialist</strong>";
+        } else if (percent >= 50) {
+          badge.innerHTML = "🥉 Badge Earned: <strong>ML Beginner</strong>";
+        } else {
+          badge.style.display = "none";
+          document.getElementById("tryAgain").style.display = "block";
+        }
+      }
+    }
+  </script></body>
+</html>

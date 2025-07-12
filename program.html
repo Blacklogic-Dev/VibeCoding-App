@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeCoding | Python & C Programming</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ff69b4, #ff8c00);
+      color: #fff;
+    }
+    header {
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 999;
+    }
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bottom-nav a i {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+    h1 {
+      text-align: center;
+      color: #00e0ff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .module {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid #00e0ff;
+    }
+    .module h3 {
+      color: #ffd700;
+    }
+    pre {
+      background: rgba(0,0,0,0.5);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      color: #00ffcc;
+    }
+    .quiz-section {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .quiz-option {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.8rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .quiz-option.correct { background-color: #28a745 !important; }
+    .quiz-option.wrong { background-color: #dc3545 !important; }
+    #scoreDisplay {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .badge-container {
+      text-align: center;
+      font-size: 1.3rem;
+      color: gold;
+      display: none;
+    }
+    .try-again {
+      text-align: center;
+      font-size: 1.2rem;
+      color: orange;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2><i class="fas fa-terminal"></i> Python & C Programming</h2>
+  </header>  <h1>🚀 Learn Python & C Programming</h1>
+  <section class="grid">
+    <div class="module">
+      <h3>Module 1: Python Basics</h3>
+      <p>Variables, print, and input handling in Python.</p>
+      <pre>name = input("Enter your name: ")
+print("Hello", name)</pre>
+    </div>
+    <div class="module">
+      <h3>Module 2: Python Functions</h3>
+      <p>Using functions to organize code.</p>
+      <pre>def greet():
+  print("Welcome to Python")
+greet()</pre>
+    </div>
+    <div class="module">
+      <h3>Module 3: C Basics</h3>
+      <p>Simple hello world program in C.</p>
+      <pre>#include &lt;stdio.h&gt;
+int main() {
+  printf("Hello, world!\n");
+  return 0;
+}</pre>
+    </div>
+    <div class="module">
+      <h3>Module 4: C Conditionals</h3>
+      <p>Control flow using if-else.</p>
+      <pre>int age = 18;
+if(age &gt;= 18) {
+  printf("Adult\n");
+}</pre>
+    </div>
+    <div class="module">
+      <h3>Module 5: VibeCoding Prompt</h3>
+      <p><em>"Write a program that takes two numbers and outputs their sum in both Python and C."</em></p>
+    </div>
+  </section>  <div class="quiz-section">
+    <h1>🧠 Programming Quiz</h1>
+    <div class="quiz-question">
+      <p>1. What keyword defines a function in Python?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">def</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">function</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">fun</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">define</div>
+    </div>
+    <div class="quiz-question">
+      <p>2. What header is required in every C program?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">#include &lt;stdio.h&gt;</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">#include &lt;python.h&gt;</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">stdio()</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">main.h</div>
+    </div>
+    <div class="quiz-question">
+      <p>3. Which symbol is used for comments in Python?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">#</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">//</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">/* */</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">--</div>
+    </div>
+    <div class="quiz-question">
+      <p>4. Which type is used for integer variables in C?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">int</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">integer</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">num</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">var</div>
+    </div>
+    <div class="quiz-question">
+      <p>5. What will print(5 + "5") in Python do?</p>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">Print 10</div>
+      <div class="quiz-option" onclick="checkAnswer(this, true)">Cause an error</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">Print 55</div>
+      <div class="quiz-option" onclick="checkAnswer(this, false)">None</div>
+    </div>
+    <h2 id="scoreDisplay"></h2>
+    <div class="badge-container" id="badgeContainer"></div>
+    <div class="try-again" id="tryAgain">😓 Study again and retake the quiz.</div>
+  </div>  <script>
+    let correctAnswers = 0;
+    let totalAnswered = 0;
+
+    function checkAnswer(element, isCorrect) {
+      if (element.classList.contains('correct') || element.classList.contains('wrong')) return;
+
+      if (isCorrect) {
+        element.classList.add('correct');
+        correctAnswers++;
+      } else {
+        element.classList.add('wrong');
+      }
+
+      totalAnswered++;
+
+      if (totalAnswered === 5) {
+        const percent = (correctAnswers / 5) * 100;
+        document.getElementById("scoreDisplay").innerText = `You scored ${correctAnswers}/5 (${percent.toFixed(1)}%)`;
+
+        const badge = document.getElementById("badgeContainer");
+        badge.style.display = "block";
+
+        if (percent >= 80) {
+          badge.innerHTML = "🎖 Badge Earned: <strong>Code Master</strong>";
+        } else if (percent >= 60) {
+          badge.innerHTML = "🥇 Badge Earned: <strong>Code Explorer</strong>";
+        } else if (percent >= 50) {
+          badge.innerHTML = "🥉 Badge Earned: <strong>Code Beginner</strong>";
+        } else {
+          badge.style.display = "none";
+          document.getElementById("tryAgain").style.display = "block";
+        }
+      }
+    }
+  </script>  <div class="bottom-nav">
+    <a href="courses.html"><i class="fas fa-book"></i>Courses</a>
+    <a href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+    <a href="feedback.html"><i class="fas fa-comment-dots"></i>Feedback</a>
+  </div>
+</body>
+</html>

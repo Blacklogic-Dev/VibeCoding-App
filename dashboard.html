@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeCoding | Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ff758c, #ff7eb3);
+      color: white;
+    }
+
+    .top-nav, .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .top-nav {
+      top: 0;
+    }
+
+    .bottom-nav {
+      bottom: 0;
+    }
+
+    .top-nav a, .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top-nav a i, .bottom-nav a i {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .dashboard-container {
+      padding: 100px 20px 80px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .canvas {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 10px;
+    }
+
+    .badges {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .badge {
+      background: #fff;
+      color: #ff4e77;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="tool.html"><i class="fas fa-tools"></i><span>Tools</span></a>
+    <a href="history.html"><i class="fas fa-history"></i><span>History</span></a>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h2>Your Learning Progress 📈</h2>
+      <p>Track how far you've come with each course</p>
+    </div>
+    
+    <canvas id="progressChart" width="400" height="200"></canvas>
+
+    <div class="badges">
+      <div class="badge">🏅 Pro Coder</div>
+      <div class="badge">🎖️ Frontend Master</div>
+      <div class="badge">🔐 Cyber Rookie</div>
+      <div class="badge">🧠 AI Explorer</div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Bar -->
+  <nav class="bottom-nav">
+    <a href="courses.html"><i class="fas fa-book"></i><span>Courses</span></a>
+    <a href="dashboard.html"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+    <a href="feedback.html"><i class="fas fa-comments"></i><span>Feedback</span></a>
+  </nav>
+
+  <script>
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    const progressChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['HTML', 'CSS', 'JavaScript', 'Python', 'ML', 'AI'],
+        datasets: [{
+          label: 'Course Completion %',
+          data: [100, 90, 80, 60, 70, 50],
+          backgroundColor: 'rgba(255, 255, 255, 0.2)',
+          borderColor: 'white',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.3,
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { color: 'white' },
+            grid: { color: 'rgba(255,255,255,0.1)' }
+          },
+          x: {
+            ticks: { color: 'white' },
+            grid: { color: 'rgba(255,255,255,0.1)' }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: { color: 'white' }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

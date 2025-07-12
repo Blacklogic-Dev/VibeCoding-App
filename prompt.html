@@ -1,0 +1,232 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+  <title>VibeCoding | Prompt Engineering</title>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>  
+  <style>      
+  body {  
+      margin: 0;  
+      font-family: 'Segoe UI', sans-serif;  
+      background: linear-gradient(to bottom right, #ff69b4, #ff8c00);  
+      color: #fff;  
+    }  
+    header {  
+      padding: 1rem 2rem;  
+      background: rgba(0, 0, 1, 0.5);  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+    }  
+    .top-nav, .bottom-nav {  
+      display: flex;  
+      justify-content: space-around;  
+      align-items: center;  
+      background-color: rgba(0, 0, 0, 0.1);  
+      padding: 10px;  
+      position: fixed;  
+      width: 100%;  
+      z-index: 999;  
+    }  .top-nav {  
+  top: 0;  
+}  
+
+.bottom-nav {  
+  bottom: 0;  
+}  
+
+.top-nav a, .bottom-nav a {  
+  color: #fff;  
+  text-decoration: none;  
+  font-size: 14px;  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+}  
+
+.top-nav a i, .bottom-nav a i {  
+  font-size: 18px;  
+  margin-bottom: 4px;  
+}  
+h1 {  
+  text-align: center;  
+  color: #66ccff;  
+}  
+.grid {  
+  display: grid;  
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+  gap: 20px;  
+  padding: 2rem;  
+  max-width: 1200px;  
+  margin: auto;  
+}  
+.module {  
+  background: rgba(255, 255, 255, 0.1);  
+  padding: 1.5rem;  
+  border-radius: 12px;  
+  border-left: 4px solid #66ccff;  
+  animation: scrollUp 60s linear infinite;  
+}  
+.module h3 {  
+  color: #ff6cc;  
+}  
+@keyframes scrollUp {  
+  0%   { transform: translateY(100%); opacity: 0; }  
+  20%  { transform: translateY(0); opacity: 1; }  
+  80%  { transform: translateY(0); opacity: 1; }  
+  100% { transform: translateY(-100%); opacity: 0; }  
+}  
+
+.quiz-section {  
+  max-width: 800px;  
+  margin: auto;  
+  padding: 2rem;  
+}  
+.quiz-question {  
+  margin-bottom: 1.5rem;  
+}  
+.quiz-option {  
+  background: rgba(255, 255, 255, 0.1);  
+  padding: 0.8rem 1rem;  
+  margin: 0.5rem 0;  
+  border-radius: 6px;  
+  cursor: pointer;  
+  transition: background 0.3s ease;  
+}  
+.quiz-option.correct { background-color: #28a745 !important; }  
+.quiz-option.wrong { background-color: #dc3545 !important; }  
+#scoreDisplay {  
+  text-align: center;  
+  font-size: 1.5rem;  
+  margin-top: 2rem;  
+}  
+.badge-container {  
+  text-align: center;  
+  font-size: 1.3rem;  
+  color: gold;  
+  display: none;  
+}  
+.try-again {  
+  text-align: center;  
+  font-size: 1.2rem;  
+  color: orange;  
+  display: none;  
+}
+
+  </style>  
+</head>  
+<body>  
+  <header>  
+  <h2><i class="fas fa-brain"></i> Prompt Engineering</h2>    </header>    <h1>📚 Theory: 5 Core Modules of Prompt Engineering</h1>  
+  <section class="grid">  
+    <div class="module">  
+      <h3>Module 1: Foundations of Prompting</h3>  
+      <p>Prompts guide AI output. They're natural language inputs designed to get useful, accurate, or creative responses.</p>  
+    </div>  
+    <div class="module">  
+      <h3>Module 2: Structured Prompt Design</h3>  
+      <p>Structure includes formatting, examples, and style. Zero-shot, few-shot, and chain-of-thought are common styles.</p>  
+    </div>  
+    <div class="module">  
+      <h3>Module 3: Controlling Output with Parameters</h3>  
+      <p>Control randomness and precision using parameters like temperature, max tokens, top_p, and penalties.</p>  
+    </div>  
+    <div class="module">  
+      <h3>Module 4: Role-based Prompts</h3>  
+      <p>Role prompting gives the AI a persona — like teacher, coder, or friend. This guides tone and depth.</p>  
+    </div>  
+    <div class="module">  
+      <h3>Module 5: Real-world Applications</h3>  
+      <p>Used in apps like chatbots, coding tools, educational tutors, and content creators for tailored results.</p>  
+    </div>  
+  </section>    <div class="quiz-section">  
+      <br>  
+    <h1>🧠 Prompt Engineering Quiz</h1>  <div class="quiz-question">  
+  <p>1. What is the role of a prompt in AI?</p>  
+  <div class="quiz-option" onclick="checkAnswer(this, true)">To instruct or guide the AI model</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">To run machine code</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">To power GPU cores</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">To download libraries</div>  
+</div>  
+
+<div class="quiz-question">  
+  <p>2. What is an example of structured prompt design?</p>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">A sentence in all caps</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, true)">Using step-by-step examples and formatting</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Repeating the prompt</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Writing in Python only</div>  
+</div>  
+
+<div class="quiz-question">  
+  <p>3. What does a low temperature in a prompt do?</p>  
+  <div class="quiz-option" onclick="checkAnswer(this, true)">Makes the output more focused and deterministic</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Adds more colors</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Improves display speed</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Controls volume</div>  
+</div>  
+
+<div class="quiz-question">  
+  <p>4. Role prompting allows the AI to:</p>  
+  <div class="quiz-option" onclick="checkAnswer(this, true)">Adopt a specific tone or persona</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Change programming language</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Access the database</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Reset its model</div>  
+</div>  
+
+<div class="quiz-question">  
+  <p>5. One real-world use of prompt engineering is:</p>  
+  <div class="quiz-option" onclick="checkAnswer(this, true)">Developing smart chatbots</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Mining cryptocurrency</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Building graphics drivers</div>  
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Compressing video files</div>  
+</div>  
+
+<h2 id="scoreDisplay"></h2>  
+<div class="badge-container" id="badgeContainer"></div>  
+<div class="try-again" id="tryAgain">😓 Oops! Study again and attempt the quiz.</div>
+
+  </div>    <script>  
+    let correctAnswers = 0;  
+    let totalAnswered = 0;  
+  
+    function checkAnswer(element, isCorrect) {  
+      if (element.classList.contains('correct') || element.classList.contains('wrong')) return;  
+  
+      if (isCorrect) {  
+        element.classList.add('correct');  
+        correctAnswers++;  
+      } else {  
+        element.classList.add('wrong');  
+      }  
+  
+      totalAnswered++;  
+  
+      if (totalAnswered === 5) {  
+        const percent = (correctAnswers / 5) * 100;  
+        document.getElementById("scoreDisplay").innerText = `You scored ${correctAnswers}/5 (${percent.toFixed(1)}%)`;  
+  
+        const badge = document.getElementById("badgeContainer");  
+        badge.style.display = "block";  
+  
+        if (percent >= 80) {  
+          badge.innerHTML = "🎖 Badge Earned: <strong>Pro Engineer</strong>";  
+        } else if (percent >= 60) {  
+          badge.innerHTML = "🥇 Badge Earned: <strong>Advanced Engineer</strong>";  
+        } else if (percent >= 55) {  
+          badge.innerHTML = "🥈 Badge Earned: <strong>Technologist</strong>";  
+        } else if (percent >= 50) {  
+          badge.innerHTML = "🥉 Badge Earned: <strong>Junior Engineer</strong>";  
+        } else {  
+          badge.style.display = "none";  
+          document.getElementById("tryAgain").style.display = "block";  
+        }  
+      }  
+    }  
+  </script>  <!-- Bottom Nav -->
+
+  <div class="bottom-nav">  
+    <a href="courses.html"><i class="fas fa-book"></i>Courses</a>  
+    <a href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>  
+    <a href="feedback.html"><i class="fas fa-comment-dots"></i>Feedback</a>  
+  </div>  </body>  
+</html  

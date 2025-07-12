@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vibe Coding | Courses</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ff69b4, #ff8c00);
+      color: #fff;
+    }
+
+    .top-nav, .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .top-nav {
+      top: 0;
+    }
+
+    .bottom-nav {
+      bottom: 0;
+    }
+
+    .top-nav a, .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top-nav a i, .bottom-nav a i {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .content {
+      padding: 80px 20px 80px 20px;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .course-card:hover {
+      transform: scale(1.05);
+    }
+
+    .course-card img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .course-card h3 {
+      font-size: 16px;
+      margin: 10px 0 5px;
+    }
+
+    .course-card button {
+      padding: 10px;
+      background: #ff69b4;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .course-card button:hover {
+      background: #ff8c00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Nav -->
+  <div class="top-nav">
+    <a href="index.html"><i class="fas fa-home"></i>Home</a>
+    <a href="tools.html"><i class="fas fa-tools"></i>Tools</a>
+    <a href="history.html"><i class="fas fa-history"></i>History</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h2 style="text-align:center; margin-bottom: 30px;">📚 Vibe Coding Courses</h2>
+    <div class="course-grid">
+
+      <!-- Replace each button block like this -->
+<div class="course-card">
+  <img src="prompt.png" alt="Prompt Engineering">
+  <h3>Prompt Engineering</h3>
+  <a href="prompt.html"><button>Take Course</button></a>
+</div>
+
+<div class="course-card">
+  <img src="web.jpg" alt="Web Dev">
+  <h3>Web Development</h3>
+  <a href="web.html"><button>Take Course</button></a>
+</div>
+
+<div class="course-card">
+  <img src="machine.jpg" alt="Machine Learning">
+  <h3>Machine Learning</h3>
+  <a href="machine.html"><button>Take Course</button></a>
+</div>
+
+<div class="course-card">
+  <img src="phyton.jpg" alt="Python and C">
+  <h3>Python & C</h3>
+  <a href="python-c.html"><button>Take Course</button></a>
+</div>
+
+<div class="course-card">
+  <img src="java.png" alt="Java & JS">
+  <h3>Java & JavaScript</h3>
+  <a href="java.html"><button>Take Course</button></a>
+</div>
+
+<div class="course-card">
+  <img src="cyber.jpg" alt="Cybersecurity">
+  <h3>Cybersecurity</h3>
+  <a href="cyber.html"><button>Take Course</button></a>
+</div>
+
+<div class="course-card">
+  <img src="graphic.jpg" alt="Graphic Design">
+  <h3>Graphic Design</h3>
+  <a href="graph.html"><button>Take Course</button></a>
+</div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="courses.html"><i class="fas fa-book"></i>Courses</a>
+    <a href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+    <a href="feedback.html"><i class="fas fa-comment-dots"></i>Feedback</a>
+  </div>
+
+</body>
+</html>

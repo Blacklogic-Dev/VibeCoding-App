@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeCoding</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff69b4, #ffa500);
+      color: white;
+      text-align: center;
+    }header {
+  padding: 1rem;
+}
+
+
+  
+.logo {
+      width: 250px;
+      animation: float 3s infinite ease-in-out;
+            width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    
+}
+@keyframes vibeBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.logo {
+  animation: vibeBounce 2s ease-in-out infinite;
+}
+
+nav.top {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+}
+
+nav.top a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+nav.top a i {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.highlight {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 1rem;
+}
+
+.highlight img {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+  border: 4px solid white;
+}
+
+.highlight-text {
+  max-width: 300px;
+}
+
+.highlight h3 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+footer a i {
+  font-size: 1.3rem;
+  margin-bottom: 0.1rem;
+}
+
+  </style>
+</head>
+<body>  <nav class="top">
+    <a href="index.html"><i class="fas fa-home"></i>Home</a>
+    <a href="tool.html"><i class="fas fa-tools"></i>Tools</a>
+    <a href="History.html"><i class="fas fa-history"></i>History</a>
+  </nav>  <header>
+      <img src="VibeCode.png" alt="VibeCoding Logo" class="logo">
+    <h2>Welcome to VibeCoding</h2>
+    <p>A new era of intelligent coding starts here.</p>
+  </header>  <section class="highlight">
+    <div>
+      <img src="BlackLogic.jpg" alt="Prof. BlackLogic">
+      <div class="highlight-text">
+        <h3>Prof. BlackLogic</h3>
+        <p>Founder and Developer of VibeCoding. Full-stack wizard with a mission to teach the world how to code with vibes.</p>
+      </div>
+    </div>
+    <div>
+      <img src="Asanda.jpg" alt="Queen Asanda">
+      <div class="highlight-text">
+        <h3>Queen Asanda</h3>
+        <p>CEO of VibeCoding. Certified Prompt Engineer from NewGen Innovators Network. Master of interface and impact.</p>
+      </div>
+    </div>
+    <p>© 2025 VibeCoding. Designed with ❤️ by Queen Asanda & BlackLogic</p>
+  </section>  <footer>
+    <a href="courses.html"><i class="fas fa-book"></i>Courses</a>
+    <a href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+    <a href="feedback.html"><i class="fas fa-comment-dots"></i>Feedback</a>
+  </footer></body>
+</html>

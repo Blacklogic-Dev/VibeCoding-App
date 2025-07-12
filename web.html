@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeCoding | Web Development</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+      body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ff69b4, #ff8c00);
+      color: #fff;
+    }
+    header {
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 1, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 999;
+    }
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bottom-nav a i {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+    h1 {
+      text-align: center;
+      color: #66ccff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .module {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid #66ccff;
+    }
+    .module h3 {
+      color: #ffcc00;
+    }
+    pre {
+      background: rgba(0,0,0,0.5);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      color: #00ffcc;
+    }
+    .quiz-section {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .quiz-option {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.8rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .quiz-option.correct { background-color: #28a745 !important; }
+    .quiz-option.wrong { background-color: #dc3545 !important; }
+    #scoreDisplay {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .badge-container {
+      text-align: center;
+      font-size: 1.3rem;
+      color: gold;
+      display: none;
+    }
+    .try-again {
+      text-align: center;
+      font-size: 1.2rem;
+      color: orange;
+      display: none;
+    }
+    .project-preview {
+      display: none;
+      margin: 2rem auto;
+      max-width: 800px;
+      background: #111;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2><i class="fas fa-code"></i> Web Development</h2>
+  </header>  <h1>🌐 VibeCoding: Web Development Modules</h1>
+  <section class="grid">
+          <div class="module">
+      <h3>Module 1: Introduction to HTML</h3>
+      <p>HTML is the structure of web pages. It uses tags to define elements like headings, paragraphs, and links.</p>
+      <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;My Web Page&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to VibeCoding&lt;/h1&gt;
+    &lt;p&gt;Let the code speak.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+    </div><div class="module">
+  <h3>Module 2: Styling with CSS</h3>
+  <p>CSS styles your page with colors, layout, and fonts. It makes your HTML beautiful.</p>
+  <pre>
+
+body { background-color: #000; color: #66ccff; font-family: Arial; } h1 { color: gold; } </pre> </div>
+
+<div class="module">
+  <h3>Module 3: Introduction to JavaScript</h3>
+  <p>JavaScript adds interactivity to your web pages. Use it to respond to user actions.</p>
+  <pre>
+
+document.querySelector("h1").onclick = function() { alert("Welcome to VibeCoding!"); }; </pre> </div>
+
+<div class="module">
+  <h3>Module 4: Responsive Layouts</h3>
+  <p>Use CSS Flexbox/Grid and media queries to make your site look good on all screens.</p>
+  <pre>
+
+@media (max-width: 600px) { body { background-color: #222; } } </pre> </div>
+
+<div class="module">
+  <h3>Module 5: VibeCoding Web Prompt</h3>
+  <p><em>"Build a 3-section landing page with HTML for layout, CSS for design, and JavaScript for interactivity."</em></p>
+</div>
+
+    <!-- Module Cards (Same as before) -->
+  </section>  <div class="quiz-section">
+    <h1>🧠 Web Development Quiz</h1><div class="quiz-question">
+  <p>1. What does HTML stand for?</p>
+  <div class="quiz-option" onclick="checkAnswer(this, true)">HyperText Markup Language</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Home Tool Markup Language</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">HighText Machine Language</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">HyperText Markdown Language</div>
+</div>
+
+<div class="quiz-question">
+  <p>2. Which CSS property changes text color?</p>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">font-style</div>
+  <div class="quiz-option" onclick="checkAnswer(this, true)">color</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">background</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">text-align</div>
+</div>
+
+<div class="quiz-question">
+  <p>3. JavaScript is mainly used to:</p>
+  <div class="quiz-option" onclick="checkAnswer(this, true)">Add interactivity</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Style elements</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Create databases</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Design layout</div>
+</div>
+
+<div class="quiz-question">
+  <p>4. What does a media query do?</p>
+  <div class="quiz-option" onclick="checkAnswer(this, true)">Applies CSS based on screen size</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Changes the HTML</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Deletes unused styles</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">Adds JavaScript events</div>
+</div>
+
+<div class="quiz-question">
+  <p>5. Which describes a complete webpage structure?</p>
+  <div class="quiz-option" onclick="checkAnswer(this, true)">HTML + CSS + JS</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">HTML only</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">CSS only</div>
+  <div class="quiz-option" onclick="checkAnswer(this, false)">JavaScript only</div>
+</div>
+
+<h2 id="scoreDisplay"></h2>
+<div class="badge-container" id="badgeContainer"></div>
+<div class="try-again" id="tryAgain">😓 Oops! Study again and attempt the quiz.</div>
+
+  </div>  <div class="project-preview" id="project">
+    <h2>🚀 Sample Web Page</h2>
+    <iframe srcdoc="<!DOCTYPE html><html><head><style>body{background:#222;color:#0f0;font-family:sans-serif;padding:2rem}button{padding:10px 20px;background:#0f0;color:#000;border:none;border-radius:5px;cursor:pointer}</style></head><body><h1>Welcome to VibeCoding</h1><p>This is a sample interactive page.</p><button onclick=\"alert('Thanks for learning Web Development!')\">Click Me</button></body></html>"></iframe>
+  </div>  <div class="bottom-nav">
+    <a href="courses.html"><i class="fas fa-book"></i>Courses</a>
+    <a href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+    <a href="feedback.html"><i class="fas fa-comment-dots"></i>Feedback</a>
+  </div>  <script>
+    let correctAnswers = 0;
+    let totalAnswered = 0;
+
+    function checkAnswer(element, isCorrect) {
+      if (element.classList.contains('correct') || element.classList.contains('wrong')) return;
+
+      if (isCorrect) {
+        element.classList.add('correct');
+        correctAnswers++;
+      } else {
+        element.classList.add('wrong');
+      }
+
+      totalAnswered++;
+
+      if (totalAnswered === 5) {
+        const percent = (correctAnswers / 5) * 100;
+        document.getElementById("scoreDisplay").innerText = `You scored ${correctAnswers}/5 (${percent.toFixed(1)}%)`;
+
+        const badge = document.getElementById("badgeContainer");
+        badge.style.display = "block";
+
+        if (percent >= 80) {
+          badge.innerHTML = "🎖 Badge Earned: <strong>Pro Developer</strong>";
+        } else if (percent >= 60) {
+          badge.innerHTML = "🥇 Badge Earned: <strong>Advanced Developer</strong>";
+        } else if (percent >= 55) {
+          badge.innerHTML = "🥈 Badge Earned: <strong>Technologist</strong>";
+        } else if (percent >= 50) {
+          badge.innerHTML = "🥉 Badge Earned: <strong>Junior Developer</strong>";
+        } else {
+          badge.style.display = "none";
+          document.getElementById("tryAgain").style.display = "block";
+        }
+
+        if (percent >= 50) {
+          document.getElementById("project").style.display = "block";
+        }
+      }
+    }
+  </script></body>
+</html>

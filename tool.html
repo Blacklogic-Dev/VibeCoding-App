@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeCoding | Tools</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff69b4, #ffa500);
+      color: white;
+      text-align: center;
+    }header {
+  padding: 1rem;
+}
+
+.logo {
+  width: 250px;
+  margin-top: 1rem;
+  animation: vibeBounce 2s ease-in-out infinite;
+}
+
+@keyframes vibeBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+nav.top {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+}
+
+nav.top a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+nav.top a i {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.tool-card {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: scale(1.05);
+}
+
+.tool-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.tool-card h3 {
+  margin: 0.5rem 0;
+}
+
+.tool-card a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+footer a i {
+  font-size: 1.3rem;
+  margin-bottom: 0.1rem;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="top">
+    <a href="index.html"><i class="fas fa-home"></i>Home</a>
+    <a href="tool.html"><i class="fas fa-tools"></i>Tools</a>
+    <a href="History.html"><i class="fas fa-history"></i>History</a>
+  </nav>  <header>
+    <img src="VibeCode.png" alt="VibeCoding Logo" class="logo">
+    <h2>Top AI Tools for VibeCoding</h2>
+    <p>Explore the most powerful AI tools used by elite VibeCoders</p>
+  </header>  <section class="grid-container">
+    <div class="tool-card">
+      <img src="OpenAI.jpg" alt="ChatGPT">
+      <h3>ChatGPT</h3>
+      <p>Your coding assistant. Generate code, debug, and brainstorm ideas with natural language.</p>
+      <a href="https://chat.openai.com/" target="_blank">Visit ChatGPT</a>
+    </div>
+    <div class="tool-card">
+      <img src="Cousor.png" alt="CASA-AI">
+      <h3>Cousor AI</h3>
+      <p>Code Advisor Smart Assistant. Helps you code smarter, debug quicker, and stay creative.</p>
+      <a href="https://www.CousorAI.com" target="_blank">Visit Cousor AI</a>
+    </div>
+    <div class="tool-card">
+      <img src="Replit.jpg" alt="Replit">
+      <h3>Replit</h3>
+      <p>Code in your browser with AI support. Perfect for fast prototyping and collaboration.</p>
+      <a href="https://replit.com/" target="_blank">Visit Replit</a>
+    </div>
+    <div class="tool-card">
+      <img src="Github.png" alt="GitHub Copilot">
+      <h3>GitHub Copilot</h3>
+      <p>Trained on billions of lines of code, Copilot writes code for you as you type.</p>
+      <a href="https://github.com/features/copilot" target="_blank">Visit GitHub Copilot</a>
+    </div>
+    <div class="tool-card">
+      <img src="Tabnine.png" alt="Tabnine">
+      <h3>Tabnine</h3>
+      <p>AI-powered code completion tool that supports multiple languages and IDEs.</p>
+      <a href="https://www.tabnine.com/" target="_blank">Visit Tabnine</a>
+    </div>
+    <div class="tool-card">
+      <img src="codium.png" alt="Codeium">
+      <h3>Codium</h3>
+      <p>Fast, free, and powerful AI pair programmer that integrates with your editor.</p>
+      <a href="https://codium.com/" target="_blank">Visit Codeium</a>
+    </div>
+  </section>  <footer>
+    <a href="courses.html"><i class="fas fa-book"></i>Courses</a>
+    <a href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+    <a href="feedback.html"><i class="fas fa-comment-dots"></i>Feedback</a>
+  </footer>
+</body>
+</html>

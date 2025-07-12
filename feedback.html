@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VibeCoding | Feedback</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff69b4, #ffa500);
+      color: white;
+      text-align: center;
+    }
+
+    nav.top {
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+    }
+
+    nav.top a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    nav.top a i {
+      font-size: 1.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+.feedback-container {
+      max-width: 450px;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .feedback-container input,
+    .feedback-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      outline: none;
+      transition: background 0.3s ease;
+    }
+
+    .feedback-container input:focus,
+    .feedback-container textarea:focus {
+      background: rgba(255,255,255,0.25);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      text-align: left;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .star {
+      font-size: 40px;
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.3s ease, color 0.3s ease;
+      filter: drop-shadow(0 0 4px white);
+    }
+
+    .star.filled {
+      color: #ffd700;
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 10px #ffd700);
+    }
+
+    .submit-btn {
+      background: #fff;
+      color: #ff69b4;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .submit-btn:hover {
+      background: #ff69b4;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    #thankYou {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #00ffcc;
+      animation: popUp 0.5s ease;
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top">
+    <a href="index.html"><i class="fas fa-home"></i>Home</a>
+    <a href="tool.html"><i class="fas fa-tools"></i>Tools</a>
+    <a href="History.html"><i class="fas fa-history"></i>History</a>
+  </nav>
+
+  <div class="feedback-container">
+    <h2 style="margin-bottom: 15px;">Leave Us Some Vibe 🌈</h2>
+    <form id="feedbackForm" novalidate>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required placeholder="e.g. Mthokozisi" />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required placeholder="you@example.com" />
+
+      <label for="feedback">Your Feedback</label>
+      <textarea id="feedback" name="feedback" required placeholder="Let us know how we’re doing..."></textarea>
+
+      <label>Rate the Vibe ✨</label>
+      <div class="stars" id="stars">
+        <span class="star" data-value="1">&#11088;</span>
+        <span class="star" data-value="2">&#11088;</span>
+        <span class="star" data-value="3">&#11088;</span>
+        <span class="star" data-value="4">&#11088;</span>
+        <span class="star" data-value="5">&#11088;</span>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Feedback</button>
+      <div id="thankYou" style="display: none;">✅ Thank you, your feedback has been sent!</div>
+    </form>
+  </div>
+
+  <script>
+    const starsContainer = document.getElementById('stars');
+    const stars = starsContainer.querySelectorAll('.star');
+    let rating = 0;
+
+    function fillStars(upto) {
+      stars.forEach((star, index) => {
+        if (index < upto) {
+          star.classList.add('filled');
+        } else {
+          star.classList.remove('filled');
+        }
+      });
+    }
+
+    stars.forEach(star => {
+      star.addEventListener('mouseover', () => {
+        const value = parseInt(star.dataset.value);
+        fillStars(value);
+      });
+      star.addEventListener('click', () => {
+        rating = parseInt(star.dataset.value);
+        fillStars(rating);
+      });
+    });
+
+    starsContainer.addEventListener('mouseleave', () => {
+      fillStars(rating);
+    });
+
+    const form = document.getElementById('feedbackForm');
+    const thankYou = document.getElementById('thankYou');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!form.name.value.trim() || !form.email.value.trim() || !form.feedback.value.trim() || rating === 0) {
+        alert("Please complete the form and choose a rating.");
+        return;
+      }
+
+      thankYou.style.display = 'block';
+      form.reset();
+      rating = 0;
+      fillStars(0);
+
+      setTimeout(() => {
+        thankYou.style.display = 'none';
+      }, 5000);
+    });
+  </script>    </div>
+</body>
+</html>
